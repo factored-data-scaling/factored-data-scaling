@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guiding Data Collection via Factored Scaling Curves</title>
+  <title>Your Project – Visual Navigation Tasks</title>
 
   <!--  ========  FONTS & ICONS  ========  -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
@@ -19,7 +19,6 @@
     body {
       font-family: "Noto Sans", sans-serif;
     }
-    /* Spacing helpers */
     section {
       padding: 3rem 0;
     }
@@ -30,7 +29,7 @@
     /* Slick custom arrows */
     .slick-prev:before,
     .slick-next:before {
-      color: #3273dc; /* Bulma primary */
+      color: #3273dc;
       font-size: 32px;
     }
     .video-thumb {
@@ -38,6 +37,7 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0 8px; /* space between thumbs */
     }
     .video-thumb img,
     .video-thumb video {
@@ -51,7 +51,7 @@
   <!--  ========  HERO  ========  -->
   <section class="hero is-light">
     <div class="hero-body has-text-centered">
-      <h1 class="title is-2">Project Title</h1>
+      <h1 class="title is-2">Project Title</h1>
       <h2 class="subtitle is-4">A concise tagline describing your work</h2>
     </div>
   </section>
@@ -62,8 +62,7 @@
       <h2 class="title is-3">Abstract</h2>
       <p>
         <!-- Replace with your abstract -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis nibh vitae mauris
-        condimentum, in facilisis leo dignissim.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis nibh vitae mauris condimentum, in facilisis leo dignissim.
       </p>
     </div>
   </section>
@@ -86,103 +85,36 @@
   <!--  ========  TASK SECTIONS  ========  -->
   <section id="tasks" class="section">
     <div class="container">
-      <!-- ===== Task Loop Start ===== -->
-      <!-- Repeat this block for each of your 3 tasks -->
+      <!-- Example task block (duplicate & edit for task-2, task-3) -->
       <div class="task-block" id="task-1">
-        <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
+        <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
         <div class="task-carousel">
-          <!-- Slide template: 8 videos per task -->
-          <div class="video-thumb" data-video="static/videos/drawer1.mp4">
-            <img src="static/thumbnails/drawer1.jpg" alt="Task 1 Video 1 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer2.mp4">
-            <img src="static/thumbnails/drawer2.jpg" alt="Task 1 Video 2 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer3.mp4">
-            <img src="static/thumbnails/drawer3.jpg" alt="Task 1 Video 3 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer4.mp4">
-            <img src="static/thumbnails/drawer4.jpg" alt="Task 1 Video 4 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer5.mp4">
-            <img src="static/thumbnails/drawer5.jpg" alt="Task 1 Video 5 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer6.mp4">
-            <img src="static/thumbnails/drawer6.jpg" alt="Task 1 Video 6 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer7.mp4">
-            <img src="static/thumbnails/drawer7.jpg" alt="Task 1 Video 7 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/drawer8.mp4">
-            <img src="static/thumbnails/drawer8.jpg" alt="Task 1 Video 8 thumbnail" loading="lazy" />
-          </div>
+          <!-- Eight thumbnails go here → update paths as needed -->
+          <div class="video-thumb" data-video="static/videos/drawer1.mp4"><img src="static/thumbnails/drawer1.jpg" alt="Task 1 Video 1 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer2.mp4"><img src="static/thumbnails/drawer2.jpg" alt="Task 1 Video 2 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer3.mp4"><img src="static/thumbnails/drawer3.jpg" alt="Task 1 Video 3 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer4.mp4"><img src="static/thumbnails/drawer4.jpg" alt="Task 1 Video 4 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer5.mp4"><img src="static/thumbnails/drawer5.jpg" alt="Task 1 Video 5 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer6.mp4"><img src="static/thumbnails/drawer6.jpg" alt="Task 1 Video 6 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer7.mp4"><img src="static/thumbnails/drawer7.jpg" alt="Task 1 Video 7 thumbnail" loading="lazy" /></div>
+          <div class="video-thumb" data-video="static/videos/drawer8.mp4"><img src="static/thumbnails/drawer8.jpg" alt="Task 1 Video 8 thumbnail" loading="lazy" /></div>
         </div>
       </div>
 
-      <!-- ===== Duplicate the above block and change IDs/paths for Task 2 & 3 ===== -->
-      <div class="task-block" id="task-2"></div>
-        <h3 class="title is-4 task-title">Task 2 – Fold Towelr</h3>
+      <!-- Duplicate this block for Task 2 and Task 3, changing IDs, titles, and file paths -->
+      <div class="task-block" id="task-2">
+        <h3 class="title is-4 task-title">Task 2 – Your Task Name</h3>
         <div class="task-carousel">
-          <!-- Slide template: 8 videos per task -->
-          <div class="video-thumb" data-video="static/videos/towel1.mp4">
-            <img src="static/thumbnails/towel1.jpg" alt="Task 2 Video 1 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel2.mp4">
-            <img src="static/thumbnails/towel2.jpg" alt="Task 2 Video 2 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel3.mp4">
-            <img src="static/thumbnails/towel3.jpg" alt="Task 2 Video 3 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel4.mp4">
-            <img src="static/thumbnails/towel4.jpg" alt="Task 2 Video 4 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel5.mp4">
-            <img src="static/thumbnails/towel5.jpg" alt="Task 2 Video 5 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel6.mp4">
-            <img src="static/thumbnails/towel6.jpg" alt="Task 2 Video 6 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel7.mp4">
-            <img src="static/thumbnails/towel7.jpg" alt="Task 2 Video 7 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/towel8.mp4">
-            <img src="static/thumbnails/towel8.jpg" alt="Task 2 Video 8 thumbnail" loading="lazy" />
-          </div>
+          <!-- 8 thumbs/video-pairs → update paths  -->
         </div>
       </div>
 
-      
-      <div class="task-block" id="task-3"></div>
-        <h3 class="title is-4 task-title">Task 3 – Put Tomato in Plate</h3>
+      <div class="task-block" id="task-3">
+        <h3 class="title is-4 task-title">Task 3 – Your Task Name</h3>
         <div class="task-carousel">
-          <!-- Slide template: 8 videos per task -->
-          <div class="video-thumb" data-video="static/videos/pick1.mp4">
-            <img src="static/thumbnails/pick1.jpg" alt="Task 3 Video 1 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick2.mp4">
-            <img src="static/thumbnails/pick2.jpg" alt="Task 3 Video 2 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick3.mp4">
-            <img src="static/thumbnails/pick3.jpg" alt="Task 3 Video 3 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick4.mp4">
-            <img src="static/thumbnails/pick4.jpg" alt="Task 3 Video 4 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick5.mp4">
-            <img src="static/thumbnails/pick5.jpg" alt="Task 3 Video 5 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick6.mp4">
-            <img src="static/thumbnails/pick6.jpg" alt="Task 3 Video 6 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick7.mp4">
-            <img src="static/thumbnails/pick7.jpg" alt="Task 3 Video 7 thumbnail" loading="lazy" />
-          </div>
-          <div class="video-thumb" data-video="static/videos/pick8.mp4">
-            <img src="static/thumbnails/pick8.jpg" alt="Task 3 Video 8 thumbnail" loading="lazy" />
-          </div>
+          <!-- 8 thumbs/video-pairs → update paths  -->
         </div>
       </div>
-
     </div>
   </section>
 
@@ -192,8 +124,7 @@
       <h2 class="title is-3">Method</h2>
       <p>
         <!-- Replace with description of your method -->
-        Morbi elit velit, laoreet sit amet est id, pretium laoreet nunc. Suspendisse potenti. Praesent vel ligula id
-        erat ultricies porttitor sit amet id metus.
+        Morbi elit velit, laoreet sit amet est id, pretium laoreet nunc. Suspendisse potenti. Praesent vel ligula id erat ultricies porttitor sit amet id metus.
       </p>
     </div>
   </section>
@@ -218,8 +149,8 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
-    //  Initialize all carousels
     $(document).ready(function () {
+      // Init every carousel
       $('.task-carousel').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -227,34 +158,18 @@
         arrows: true,
         dots: false,
         lazyLoad: 'ondemand',
+        touchMove: true,
         responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1
-            }
-          }
+          { breakpoint: 1024, settings: { slidesToShow: 3 } },
+          { breakpoint: 768,  settings: { slidesToShow: 2 } },
+          { breakpoint: 480,  settings: { slidesToShow: 1 } }
         ]
       });
 
-      //  Replace thumbnail with playable video on click
+      // Click → swap thumbnail for playable video
       $('.video-thumb').on('click', function () {
         const $thumb = $(this);
         const videoSrc = $thumb.data('video');
-
-        // Avoid duplicating video element
         if ($thumb.find('video').length === 0) {
           $thumb.empty();
           const $video = $('<video/>', {
@@ -265,6 +180,17 @@
           })[0];
           $video.onloadeddata = () => $video.play();
           $thumb.append($video);
+        }
+      });
+
+      // Scroll-wheel / trackpad swipe support while hovering
+      $('.task-carousel').on('wheel', function (e) {
+        e.preventDefault();
+        const delta = e.originalEvent.deltaY || e.originalEvent.deltaX;
+        if (delta < 0) {
+          $(this).slick('slickPrev');
+        } else {
+          $(this).slick('slickNext');
         }
       });
     });
