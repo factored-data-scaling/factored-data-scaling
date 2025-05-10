@@ -3,77 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Project – Visual Navigation Tasks</title>
+  <title>ViNT — A Foundation Model for Visual Navigation</title>
 
-  <!--  ========  FONTS & ICONS  ========  -->
+  <!--  =====  FONTS & ICONS  =====  -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="icon" href="./static/images/favicon.svg" />
 
-  <!--  ========  CSS  ========  -->
+  <!--  =====  CSS  =====  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
   <style>
-    body {
-      font-family: "Noto Sans", sans-serif;
-    }
-    section {
-      padding: 3rem 0;
-    }
-    .task-title {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    /* Slick custom arrows */
-    .slick-prev:before,
-    .slick-next:before {
-      color: #3273dc;
-      font-size: 32px;
-    }
-    .video-thumb {
-      cursor: pointer;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin: 0 8px; /* space between thumbs */
-    }
-    .video-thumb img,
-    .video-thumb video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    body {font-family:"Noto Sans",sans-serif;}
+    section {padding:3rem 0;}
+    .task-title {margin-bottom:1rem;font-weight:600;}
+
+    /* Slick arrows */
+    .slick-prev:before,.slick-next:before{color:#3273dc;font-size:32px;}
+
+    /* Thumbnail styling */
+    .video-thumb{cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin:0 8px;}
+    .video-thumb video{width:100%;height:auto;display:block;}
   </style>
 </head>
 <body>
-  <!--  ========  HERO  ========  -->
+  <!-- ===== HERO with title & authors ===== -->
   <section class="hero is-light">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-2">Project Title</h1>
-      <h2 class="subtitle is-4">A concise tagline describing your work</h2>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">Guided Data Collection via Factored Scaling Curves</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="#">Lihan Zha</a><sup>&#8224;</sup>, </span>
+              <span class="author-block"><a href="#">Apurva Badithela</a><sup>&#8224;</sup>, </span>
+              <span class="author-block"><a href="#">Michael Zhang</a><sup>&#8224;</sup>, </span>
+              <span class="author-block"><a href="#">Justin Lidard</a>, </span>
+              <span class="author-block"><a href="#">Jeremy Bao</a>, </span>
+              <span class="author-block"><a href="#">Emily Zhou</a>, </span>
+              <span class="author-block"><a href="#">David Snyder</a></span>
+              <span class="author-block"><a href="#">Allen Z. Ren</a></span>
+              <span class="author-block"><a href="#">Dhruv Shah</a></span>
+              <span class="author-block"><a href="#">Anirudha Majumdar</a></span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block">UC Berkeley</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!--  ========  ABSTRACT  ========  -->
+  <!-- ===== ABSTRACT ===== -->
   <section id="abstract" class="section">
     <div class="container content is-medium">
       <h2 class="title is-3">Abstract</h2>
-      <p>
-        <!-- Replace with your abstract -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis nibh vitae mauris condimentum, in facilisis leo dignissim.
-      </p>
+      <p>Replace this paragraph with your actual abstract. The hero above follows the style of the example you provided, including title and author list.</p>
     </div>
   </section>
 
-  <!--  ========  SUMMARY VIDEO  ========  -->
+  <!-- ===== SUMMARY VIDEO ===== -->
   <section id="summary" class="section has-background-light">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Summary Video</h2>
       <div class="columns is-centered">
         <div class="column is-8 has-text-centered">
-          <video id="summary-video" class="shadow" controls preload="metadata" width="100%" poster="static/images/summary_thumbnail.jpg">
+          <video id="summary-video" class="shadow" controls preload="metadata" width="100%" poster="static/thumbnails/summary.jpg">
             <source src="static/videos/summary.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -82,116 +80,102 @@
     </div>
   </section>
 
-  <!--  ========  TASK SECTIONS  ========  -->
+  <!-- ===== TASK SECTIONS ===== -->
   <section id="tasks" class="section">
     <div class="container">
-      <!-- Example task block (duplicate & edit for task-2, task-3) -->
+      <!-- ===== Task 1 ===== -->
       <div class="task-block" id="task-1">
-        <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
+        <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
         <div class="task-carousel">
-          <!-- Eight thumbnails go here → update paths as needed -->
-          <div class="video-thumb" data-video="static/videos/drawer1.mp4"><img src="static/thumbnails/drawer1.jpg" alt="Task 1 Video 1 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer2.mp4"><img src="static/thumbnails/drawer2.jpg" alt="Task 1 Video 2 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer3.mp4"><img src="static/thumbnails/drawer3.jpg" alt="Task 1 Video 3 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer4.mp4"><img src="static/thumbnails/drawer4.jpg" alt="Task 1 Video 4 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer5.mp4"><img src="static/thumbnails/drawer5.jpg" alt="Task 1 Video 5 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer6.mp4"><img src="static/thumbnails/drawer6.jpg" alt="Task 1 Video 6 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer7.mp4"><img src="static/thumbnails/drawer7.jpg" alt="Task 1 Video 7 thumbnail" loading="lazy" /></div>
-          <div class="video-thumb" data-video="static/videos/drawer8.mp4"><img src="static/thumbnails/drawer8.jpg" alt="Task 1 Video 8 thumbnail" loading="lazy" /></div>
+          <!-- Eight videos with poster extracted via Python script -->
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer1.jpg" preload="auto" playsinline muted><source src="static/videos/drawer1.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer2.jpg" preload="auto" playsinline muted><source src="static/videos/drawer2.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer3.jpg" preload="auto" playsinline muted><source src="static/videos/drawer3.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer4.jpg" preload="auto" playsinline muted><source src="static/videos/drawer4.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer5.jpg" preload="auto" playsinline muted><source src="static/videos/drawer5.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer6.jpg" preload="auto" playsinline muted><source src="static/videos/drawer6.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer7.jpg" preload="auto" playsinline muted><source src="static/videos/drawer7.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer8.jpg" preload="auto" playsinline muted><source src="static/videos/drawer8.mp4" type="video/mp4" /></video></div>
         </div>
       </div>
 
-      <!-- Duplicate this block for Task 2 and Task 3, changing IDs, titles, and file paths -->
+      <!-- ===== Task 2 (fill in your paths) ===== -->
       <div class="task-block" id="task-2">
-        <h3 class="title is-4 task-title">Task 2 – Your Task Name</h3>
+        <h3 class="title is-4 task-title">Task 2 – Your Task Name</h3>
         <div class="task-carousel">
-          <!-- 8 thumbs/video-pairs → update paths  -->
+          <!-- Example stub → duplicate & change filenames -->
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/task2_vid1.jpg" preload="auto" playsinline muted><source src="static/videos/task2_vid1.mp4" type="video/mp4" /></video></div>
+          <!-- repeat 7 more times -->
         </div>
       </div>
 
+      <!-- ===== Task 3 (fill in your paths) ===== -->
       <div class="task-block" id="task-3">
-        <h3 class="title is-4 task-title">Task 3 – Your Task Name</h3>
+        <h3 class="title is-4 task-title">Task 3 – Your Task Name</h3>
         <div class="task-carousel">
-          <!-- 8 thumbs/video-pairs → update paths  -->
+          <!-- Example stub → duplicate & change filenames -->
+          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/task3_vid1.jpg" preload="auto" playsinline muted><source src="static/videos/task3_vid1.mp4" type="video/mp4" /></video></div>
+          <!-- repeat 7 more times -->
         </div>
       </div>
     </div>
   </section>
 
-  <!--  ========  METHOD  ========  -->
+  <!-- ===== METHOD ===== -->
   <section id="method" class="section has-background-light">
     <div class="container content is-medium">
       <h2 class="title is-3">Method</h2>
-      <p>
-        <!-- Replace with description of your method -->
-        Morbi elit velit, laoreet sit amet est id, pretium laoreet nunc. Suspendisse potenti. Praesent vel ligula id erat ultricies porttitor sit amet id metus.
-      </p>
+      <p>Replace with your method description.</p>
     </div>
   </section>
 
-  <!--  ========  BIBTEX  ========  -->
+  <!-- ===== BIBTEX ===== -->
   <section id="bibtex" class="section">
     <div class="container content is-medium">
       <h2 class="title is-3">BibTeX</h2>
       <pre>
-@inproceedings{yourkey2025project,
-  title     = {Project Title},
-  author    = {Your, Name and Collaborator, Another},
+@inproceedings{shah2023vint,
+  title     = {ViNT: A Foundation Model for Visual Navigation},
+  author    = {Shah, Dhruv and Sridhar, Ajay and Dashora, Nitish and Stachowicz, Kyle and Black, Kevin and Hirose, Noriaki and Levine, Sergey},
   booktitle = {Conference on Robot Learning},
-  year      = {2025},
-  url       = {https://your-project-site.com}
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2306.14846}
 }
       </pre>
     </div>
   </section>
 
-  <!--  ========  SCRIPTS  ========  -->
+  <!-- ===== SCRIPTS ===== -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
-    $(document).ready(function () {
-      // Init every carousel
+    $(function(){
+      // Init carousels
       $('.task-carousel').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: false,
-        arrows: true,
-        dots: false,
-        lazyLoad: 'ondemand',
-        touchMove: true,
-        responsive: [
-          { breakpoint: 1024, settings: { slidesToShow: 3 } },
-          { breakpoint: 768,  settings: { slidesToShow: 2 } },
-          { breakpoint: 480,  settings: { slidesToShow: 1 } }
+        slidesToShow:4,
+        slidesToScroll:1,
+        infinite:false,
+        arrows:true,
+        dots:false,
+        lazyLoad:'ondemand',
+        touchMove:true,
+        responsive:[
+          {breakpoint:1024,settings:{slidesToShow:3}},
+          {breakpoint:768, settings:{slidesToShow:2}},
+          {breakpoint:480, settings:{slidesToShow:1}}
         ]
       });
 
-      // Click → swap thumbnail for playable video
-      $('.video-thumb').on('click', function () {
-        const $thumb = $(this);
-        const videoSrc = $thumb.data('video');
-        if ($thumb.find('video').length === 0) {
-          $thumb.empty();
-          const $video = $('<video/>', {
-            src: videoSrc,
-            controls: true,
-            playsinline: true,
-            preload: 'metadata'
-          })[0];
-          $video.onloadeddata = () => $video.play();
-          $thumb.append($video);
-        }
+      // Play on click + reveal controls
+      $(document).on('click','.thumb-video',function(){
+        if(this.paused){this.controls=true;this.play();}
       });
 
-      // Scroll-wheel / trackpad swipe support while hovering
-      $('.task-carousel').on('wheel', function (e) {
+      // Trackpad/scroll navigation
+      $('.task-carousel').on('wheel',function(e){
         e.preventDefault();
-        const delta = e.originalEvent.deltaY || e.originalEvent.deltaX;
-        if (delta < 0) {
-          $(this).slick('slickPrev');
-        } else {
-          $(this).slick('slickNext');
-        }
+        const delta=e.originalEvent.deltaY||e.originalEvent.deltaX;
+        $(this).slick(delta<0?'slickPrev':'slickNext');
       });
     });
   </script>
