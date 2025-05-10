@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ViNT — A Foundation Model for Visual Navigation</title>
+  <title>Guided Data Collection via Factored Scaling Curves</title>
 
   <!--  =====  FONTS & ICONS  =====  -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
@@ -16,19 +16,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
   <style>
-    body {font-family:"Noto Sans",sans-serif;}
-    section {padding:3rem 0;}
-    .task-title {margin-bottom:1rem;font-weight:600;}
+    /* --- GLOBAL --- */
+    body { background:#fff; font-family:"Noto Sans", sans-serif; }
+    section { padding:3rem 0; }
 
-    /* Slick arrows */
-    .slick-prev:before,.slick-next:before{color:#3273dc;font-size:32px;}
+    /* --- SECTION COLORS --- */
+    .section-gray { background:#f7f7f7; }
 
-    /* Thumbnail styling */
-    .video-thumb{cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin:0 8px;}
-    .video-thumb video{width:100%;height:auto;display:block;}
+    /* --- TYPOGRAPHY --- */
+    .task-title { margin-bottom:1rem; font-weight:600; }
+
+    /* --- SLICK ARROWS --- */
+    .slick-prev:before, .slick-next:before { color:#3273dc; font-size:32px; }
+
+    /* --- THUMBNAILS --- */
+    .video-thumb { cursor:pointer; border-radius:8px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,0.1); margin:0 8px; }
+    .video-thumb video { width:100%; height:auto; display:block; }
+
+    /* --- LAYOUT HELPERS --- */
+    .task-block { margin-bottom:3rem; }
+    .task-carousel { margin-top:1rem; }
   </style>
 </head>
 <body>
+
   <!-- ===== HERO with title & authors ===== -->
   <section class="hero is-light">
     <div class="hero-body">
@@ -37,19 +48,19 @@
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">Guided Data Collection via Factored Scaling Curves</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="#">Lihan Zha</a><sup>&#8224;</sup>, </span>
-              <span class="author-block"><a href="#">Apurva Badithela</a><sup>&#8224;</sup>, </span>
+              <span class="author-block"><a href="https://lihzha.github.io/">Lihan Zha</a><sup>&#8224;</sup>, </span>
+              <span class="author-block"><a href="https://abadithela.github.io/">Apurva Badithela</a><sup>&#8224;</sup>, </span>
               <span class="author-block"><a href="#">Michael Zhang</a><sup>&#8224;</sup>, </span>
-              <span class="author-block"><a href="#">Justin Lidard</a>, </span>
-              <span class="author-block"><a href="#">Jeremy Bao</a>, </span>
-              <span class="author-block"><a href="#">Emily Zhou</a>, </span>
-              <span class="author-block"><a href="#">David Snyder</a></span>
-              <span class="author-block"><a href="#">Allen Z. Ren</a></span>
-              <span class="author-block"><a href="#">Dhruv Shah</a></span>
-              <span class="author-block"><a href="#">Anirudha Majumdar</a></span>
+              <span class="author-block"><a href="https://jlidard.github.io/">Justin Lidard</a>, </span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/jeremy-bao/">Jeremy Bao</a>, </span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/zhou-emily/">Emily Zhou</a>, </span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=vxcCdY0AAAAJ&hl=en">David Snyder</a>, </span>
+              <span class="author-block"><a href="https://allenzren.github.io/">Allen Z. Ren</a>, </span>
+              <span class="author-block"><a href="https://robodhruv.github.io/">Dhruv Shah</a>, </span>
+              <span class="author-block"><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></span>
             </div>
             <div class="is-size-6 publication-authors">
-              <span class="author-block">UC Berkeley</span>
+              <span class="author-block">Princeton University</span>
             </div>
           </div>
         </div>
@@ -61,12 +72,14 @@
   <section id="abstract" class="section">
     <div class="container content is-medium">
       <h2 class="title is-3">Abstract</h2>
-      <p>Replace this paragraph with your actual abstract. The hero above follows the style of the example you provided, including title and author list.</p>
+      <p>Generalist imitation learning policies trained on large datasets show great promise for challenging manipulation tasks. However, to ensure generalization to different conditions, policies need to be trained with data collected across a large set of environmental factor variations (e.g., camera pose, table height, distractors) — a prohibitively expensive undertaking if done exhaustively.</p>
+      <p>We introduce a principled method for deciding <em>what</em> data to collect and <em>how much</em> to collect for each factor by constructing <em>factored scaling curves</em> (\ACRO{}), which quantify how policy performance varies as data scales along individual or paired factors. These curves enable targeted data acquisition for the most influential factor combinations within a given budget.</p>
+      <p>We evaluate the proposed method through extensive simulated and real‑world experiments, across both training‑from‑scratch and fine‑tuning settings, and show that it boosts success rates in real‑world tasks in new environments by up to 26&nbsp;% over existing data‑collection strategies. We also demonstrate policy embedding similarity as an efficient surrogate metric for guiding data collection.</p>
     </div>
   </section>
 
   <!-- ===== SUMMARY VIDEO ===== -->
-  <section id="summary" class="section has-background-light">
+  <section id="summary" class="section section-gray">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Summary Video</h2>
       <div class="columns is-centered">
@@ -80,41 +93,43 @@
     </div>
   </section>
 
-  <!-- ===== TASK SECTIONS ===== -->
-  <section id="tasks" class="section">
+  <!-- ===== REAL ROBOT EXPERIMENTS ===== -->
+  <section id="real-robot" class="section section-gray">
     <div class="container">
+      <h2 class="title is-3 has-text-centered">Real Robot Experiments</h2>
+
       <!-- ===== Task 1 ===== -->
       <div class="task-block" id="task-1">
         <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
         <div class="task-carousel">
           <!-- Eight videos with poster extracted via Python script -->
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer1.jpg" preload="auto" playsinline muted><source src="static/videos/drawer1.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer2.jpg" preload="auto" playsinline muted><source src="static/videos/drawer2.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer3.jpg" preload="auto" playsinline muted><source src="static/videos/drawer3.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer4.jpg" preload="auto" playsinline muted><source src="static/videos/drawer4.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer5.jpg" preload="auto" playsinline muted><source src="static/videos/drawer5.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer6.jpg" preload="auto" playsinline muted><source src="static/videos/drawer6.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer7.jpg" preload="auto" playsinline muted><source src="static/videos/drawer7.mp4" type="video/mp4" /></video></div>
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/drawer8.jpg" preload="auto" playsinline muted><source src="static/videos/drawer8.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer1.jpg" preload="metadata"><source src="static/videos/drawer1.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer2.jpg" preload="metadata"><source src="static/videos/drawer2.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer3.jpg" preload="metadata"><source src="static/videos/drawer3.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer4.jpg" preload="metadata"><source src="static/videos/drawer4.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer5.jpg" preload="metadata"><source src="static/videos/drawer5.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer6.jpg" preload="metadata"><source src="static/videos/drawer6.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer7.jpg" preload="metadata"><source src="static/videos/drawer7.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer8.jpg" preload="metadata"><source src="static/videos/drawer8.mp4" type="video/mp4" /></video></div>
         </div>
       </div>
 
-      <!-- ===== Task 2 (fill in your paths) ===== -->
+      <!-- ===== Task 2 (stub) ===== -->
       <div class="task-block" id="task-2">
         <h3 class="title is-4 task-title">Task 2 – Your Task Name</h3>
         <div class="task-carousel">
-          <!-- Example stub → duplicate & change filenames -->
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/task2_vid1.jpg" preload="auto" playsinline muted><source src="static/videos/task2_vid1.mp4" type="video/mp4" /></video></div>
+          <!-- Duplicate & change filenames -->
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/task2_vid1.jpg" preload="metadata"><source src="static/videos/task2_vid1.mp4" type="video/mp4" /></video></div>
           <!-- repeat 7 more times -->
         </div>
       </div>
 
-      <!-- ===== Task 3 (fill in your paths) ===== -->
+      <!-- ===== Task 3 (stub) ===== -->
       <div class="task-block" id="task-3">
         <h3 class="title is-4 task-title">Task 3 – Your Task Name</h3>
         <div class="task-carousel">
-          <!-- Example stub → duplicate & change filenames -->
-          <div class="video-thumb"><video class="thumb-video" poster="static/thumbnails/task3_vid1.jpg" preload="auto" playsinline muted><source src="static/videos/task3_vid1.mp4" type="video/mp4" /></video></div>
+          <!-- Duplicate & change filenames -->
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/task3_vid1.jpg" preload="metadata"><source src="static/videos/task3_vid1.mp4" type="video/mp4" /></video></div>
           <!-- repeat 7 more times -->
         </div>
       </div>
@@ -122,7 +137,7 @@
   </section>
 
   <!-- ===== METHOD ===== -->
-  <section id="method" class="section has-background-light">
+  <section id="method" class="section">
     <div class="container content is-medium">
       <h2 class="title is-3">Method</h2>
       <p>Replace with your method description.</p>
@@ -166,16 +181,14 @@
         ]
       });
 
-      // Play on click + reveal controls
-      $(document).on('click','.thumb-video',function(){
-        if(this.paused){this.controls=true;this.play();}
-      });
-
-      // Trackpad/scroll navigation
+      // Horizontal track‑pad scroll → carousel navigation; let vertical scroll bubble up
       $('.task-carousel').on('wheel',function(e){
-        e.preventDefault();
-        const delta=e.originalEvent.deltaY||e.originalEvent.deltaX;
-        $(this).slick(delta<0?'slickPrev':'slickNext');
+        const deltaX = e.originalEvent.deltaX;
+        const deltaY = e.originalEvent.deltaY;
+        if(Math.abs(deltaX) > Math.abs(deltaY)){
+          e.preventDefault();
+          $(this).slick(deltaX < 0 ? 'slickPrev' : 'slickNext');
+        }
       });
     });
   </script>
