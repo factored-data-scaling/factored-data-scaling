@@ -8,6 +8,7 @@
   <!--  =====  FONTS & ICONS  =====  -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="icon" href="./static/images/favicon.svg" />
 
   <!--  =====  CSS  =====  -->
@@ -23,8 +24,9 @@
     /* --- SECTION COLORS --- */
     .section-gray { background:#f7f7f7; }
 
-    /* --- TYPOGRAPHY --- */
+    /* --- TYPOGRAPHY & LINKS --- */
     .task-title { margin-bottom:1rem; font-weight:600; }
+    .publication-authors a { color:#3273dc; text-decoration:underline; }
 
     /* --- SLICK ARROWS --- */
     .slick-prev:before, .slick-next:before { color:#3273dc; font-size:32px; }
@@ -36,12 +38,13 @@
     /* --- LAYOUT HELPERS --- */
     .task-block { margin-bottom:3rem; }
     .task-carousel { margin-top:1rem; }
+    .publication-links .button { margin:0.25rem; }
   </style>
 </head>
 <body>
 
   <!-- ===== HERO with title & authors ===== -->
-  <section class="hero is-light">
+  <section class="hero section">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -59,6 +62,7 @@
               <span class="author-block"><a href="https://robodhruv.github.io/">Dhruv Shah</a>, </span>
               <span class="author-block"><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></span>
             </div>
+
             <div class="is-size-6 publication-authors">
               <span class="author-block">Princeton University</span>
             </div>
@@ -71,7 +75,7 @@
   <!-- ===== ABSTRACT ===== -->
   <section id="abstract" class="section">
     <div class="container content is-medium">
-      <h2 class="title is-3">Abstract</h2>
+      <h2 class="title is-3 has-text-centered">Abstract</h2>
       <p>Generalist imitation learning policies trained on large datasets show great promise for challenging manipulation tasks. However, to ensure generalization to different conditions, policies need to be trained with data collected across a large set of environmental factor variations (e.g., camera pose, table height, distractors) — a prohibitively expensive undertaking if done exhaustively.</p>
       <p>We introduce a principled method for deciding <em>what</em> data to collect and <em>how much</em> to collect for each factor by constructing <em>factored scaling curves</em> (\ACRO{}), which quantify how policy performance varies as data scales along individual or paired factors. These curves enable targeted data acquisition for the most influential factor combinations within a given budget.</p>
       <p>We evaluate the proposed method through extensive simulated and real‑world experiments, across both training‑from‑scratch and fine‑tuning settings, and show that it boosts success rates in real‑world tasks in new environments by up to 26&nbsp;% over existing data‑collection strategies. We also demonstrate policy embedding similarity as an efficient surrogate metric for guiding data collection.</p>
@@ -79,7 +83,7 @@
   </section>
 
   <!-- ===== SUMMARY VIDEO ===== -->
-  <section id="summary" class="section section-gray">
+  <section id="summary" class="section">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Summary Video</h2>
       <div class="columns is-centered">
