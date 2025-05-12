@@ -10,17 +10,17 @@ $(document).ready(function() {
             var domain_name = domain_name_cmd_idx.substring(0, sep_idx);
             var cmd_idx_str = domain_name_cmd_idx.substring(sep_idx + 1);
     
-            var codegen_file = 'https://explore-eqa.github.io/uncertainty/' + domain_name + '/' + cmd_idx_str + '.txt';
-            $.get(codegen_file, function(data) {
+            //var codegen_file = 'https://explore-eqa.github.io/uncertainty/' + domain_name + '/' + cmd_idx_str + '.txt';
+            //$.get(codegen_file, function(data) {
                 // var highlighted_code = hljs.highlight(data, {language: 'python'}).value;
-                var highlighted_code = data;
-                var html_code = codegen_html_template
-                                    .replace('{code}', highlighted_code)
+                //var highlighted_code = data;
+                //var html_code = codegen_html_template
+                                    //.replace('{code}', highlighted_code)
                                     // .replace('{link}', codegen_file)
-                                    ;
-                $(html_code).appendTo("#" + id);
-             }, 'text');
-        });
+                                    //;
+                //$(html_code).appendTo("#" + id);
+             //}, 'text');
+        //});
     
         var current_cmd_idxs = {
             "sim": 1,

@@ -18,27 +18,47 @@
 
   <style>
     /* --- GLOBAL --- */
-    body { background:#fff; font-family:"Noto Sans", sans-serif; }
-    section { padding:3rem 0; }
+    body{background:#fff;font-family:"Noto Sans",sans-serif;}
+    section{padding:2.5rem 0;}
 
     /* --- SECTION COLORS --- */
-    .section-gray { background:#f7f7f7; }
+    .section-gray{background:#f7f7f7;}
 
     /* --- TYPOGRAPHY & LINKS --- */
-    .task-title { margin-bottom:1rem; font-weight:600; }
-    .publication-authors a { color:#3273dc; text-decoration:underline; }
+    .task-title{margin-bottom:1rem;font-weight:600;}
+    .publication-authors{margin-bottom:1rem;} /* space below authors */
+    .publication-authors a{color:#3273dc;text-decoration:none;white-space:nowrap;}
+    .publication-authors a:hover{text-decoration:underline;}
+
+    /* --- HERO & SPACING TWEAKS --- */
+    .hero{padding-bottom:0.5rem;} /* tighter gap above overview */
+    #overview.section{padding-top:0.75rem;} /* tighter gap below hero */
+    .publication-links{margin-top:1.5rem;margin-bottom:1.5rem;} /* gap between authors/icons & icons/logo */
+    figure.lab-logo{margin-top:1.5rem;} /* gap between icons and Princeton logo */
 
     /* --- SLICK ARROWS --- */
-    .slick-prev:before, .slick-next:before { color:#3273dc; font-size:32px; }
+    .slick-prev:before,.slick-next:before{color:#3273dc;font-size:32px;}
 
     /* --- THUMBNAILS --- */
-    .video-thumb { cursor:pointer; border-radius:8px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,0.1); margin:0 8px; }
-    .video-thumb video { width:100%; height:auto; display:block; }
+    .video-thumb{cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin:0 8px;}
+    .video-thumb video{width:100%;height:auto;display:block;}
+
+    /* --- STAND‑ALONE VIDEOS --- */
+    .overview-video,.sim-video{width:100%;height:auto;border-radius:0;box-shadow:none;pointer-events:none;}
 
     /* --- LAYOUT HELPERS --- */
-    .task-block { margin-bottom:3rem; }
-    .task-carousel { margin-top:1rem; }
-    .publication-links .button { margin:0.25rem; }
+    .task-block{margin-bottom:3rem;}
+    .task-carousel{margin-top:1rem;}
+
+    /* --- CONTENT WIDTH CONSISTENCY --- */
+    .content-container{max-width:960px;margin:0 auto;}
+
+    /* --- PDF EMBED --- */
+    .pdf-container{margin-top:1.5rem;}
+    .pdf-container object{width:100%;height:600px;border:none;}
+
+    /* --- REAL EXP IMG --- */
+    .real-exp-img{width:100%;height:auto;max-width:100%;}
   </style>
 </head>
 <body>
@@ -46,65 +66,89 @@
   <!-- ===== HERO with title & authors ===== -->
   <section class="hero section">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">Guided Data Collection via Factored Scaling Curves</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://lihzha.github.io/">Lihan Zha</a><sup>&#8224;</sup>, </span>
-              <span class="author-block"><a href="https://abadithela.github.io/">Apurva Badithela</a><sup>&#8224;</sup>, </span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/michael-zhang-47a954241/">Michael Zhang</a><sup>&#8224;</sup>, </span>
-              <span class="author-block"><a href="https://jlidard.github.io/">Justin Lidard</a>, </span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/jeremy-bao/">Jeremy Bao</a>, </span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/zhou-emily/">Emily Zhou</a>, </span>
-              <span class="author-block"><a href="https://scholar.google.com/citations?user=vxcCdY0AAAAJ&hl=en">David Snyder</a>, </span>
-              <span class="author-block"><a href="https://allenzren.github.io/">Allen Z. Ren</a>, </span>
-              <span class="author-block"><a href="https://robodhruv.github.io/">Dhruv Shah</a>, </span>
-              <span class="author-block"><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></span>
-            </div>
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-2 publication-title">Guided Data Collection via Factored Scaling Curves</h1>
 
-            <div class="is-size-6 publication-authors">
-              <span class="author-block">Princeton University</span>
-            </div>
+        <!-- ===== AUTHORS (three rows, no underscores) ===== -->
+        <div class="is-size-5 publication-authors">
+          <div>
+            <span class="author-block"><a href="https://lihzha.github.io/">Lihan&nbsp;Zha</a></span>,
+            <span class="author-block"><a href="https://abadithela.github.io/">Apurva&nbsp;Badithela</a></span>,
+            <span class="author-block"><a href="https://www.linkedin.com/in/michael-zhang-47a954241/">Michael&nbsp;Zhang</a></span>
+          </div>
+          <div>
+            <span class="author-block"><a href="https://jlidard.github.io/">Justin&nbsp;Lidard</a></span>,
+            <span class="author-block"><a href="https://www.linkedin.com/in/jeremy-bao/">Jeremy&nbsp;Bao</a></span>,
+            <span class="author-block"><a href="https://www.linkedin.com/in/zhou-emily/">Emily&nbsp;Zhou</a></span>,
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=vxcCdY0AAAAJ&hl=en">David&nbsp;Snyder</a></span>
+          </div>
+          <div>
+            <span class="author-block"><a href="https://allenzren.github.io/">Allen&nbsp;Z.&nbsp;Ren</a></span>,
+            <span class="author-block"><a href="https://robodhruv.github.io/">Dhruv&nbsp;Shah</a></span>,
+            <span class="author-block"><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha&nbsp;Majumdar</a></span>
           </div>
         </div>
+
+        <!-- ===== RESOURCE ICONS ===== -->
+        <div class="publication-links">
+          <a href="static/paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+          </a>
+          <a href="https://github.com/user/repo" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+          </a>
+          <a href="https://youtu.be/your_video" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
+          </a>
+        </div>
+
+        <!-- ===== LAB LOGO ===== -->
+        <figure class="image is-inline-block lab-logo">
+          <img src="img/irom_princeton.png" alt="IROM Lab logo" style="max-width:600px;">
+        </figure>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== OVERVIEW ===== -->
+  <section id="overview" class="section">
+    <div class="container is-max-desktop content-container has-text-centered">
+      <video class="overview-video" autoplay loop muted playsinline poster="static/thumbnails/overview.jpg">
+        <source src="static/videos/overview.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top:1rem;">We introduce <strong>Factored&nbsp;Scaling&nbsp;Curves&nbsp;(FSC)</strong>, which model how policy performance scales with data for different environmental factors and can be extrapolated to guide principled data collection.</p>
     </div>
   </section>
 
   <!-- ===== ABSTRACT ===== -->
   <section id="abstract" class="section">
-    <div class="container content is-medium">
+    <div class="container is-max-desktop content-container">
       <h2 class="title is-3 has-text-centered">Abstract</h2>
-      <p>Generalist imitation learning policies trained on large datasets show great promise for solving challenging manipulation tasks. However, to ensure generalization to different conditions, policies need to be trained with data collected across a large set of environmental factor variations (e.g., camera pose, table height, distractors) --- a prohibitively expensive undertaking, if done exhaustively.</p>
-      <p>We introduce a principled method for deciding \emph{what} data to collect and \emph{how much} to collect for each factor by constructing \emph{factored scaling curves}, which quantify how policy performance varies as data scales along individual or paired factors. These curves enable targeted data acquisition for the most influential factor combinations within a given budget. </p>
-      <p>We evaluate the proposed method through extensive simulated and real-world experiments, across both training-from-scratch and fine-tuning settings, and show that it boosts success rates in real-world tasks in new environments by up to 26% over existing data-collection strategies. We further demonstrate how factored scaling curves can effectively guide data collection using an \emph{offline metric}, without requiring real-world evaluation at scale.</p>
+      <p>
+        Generalist imitation-learning policies trained on large datasets show great promise for diverse manipulation tasks. However, achieving robust generalization requires data gathered under numerous environmental-factor variations (e.g., camera pose, table height, distractors) &mdash; an exhaustive dataset is prohibitively expensive. We introduce a principled method for deciding <em>what</em> data to collect and <em>how much</em> to collect for each factor by constructing <em>factored scaling curves</em> (FSC), which quantify how policy performance changes as data scales along individual or paired factors. These curves enable targeted data acquisition for the most influential factor combinations within a given budget. Through extensive simulated and real-world experiments &mdash; covering both training-from-scratch and fine-tuning scenarios &mdash; we show that FSC boosts success rates on real-world tasks in new environments by up to&nbsp;26&nbsp;% compared with existing data-collection strategies. Finally, we demonstrate that FSC can efficiently guide data collection using an <em>offline metric</em>, eliminating the need for costly large-scale real-world evaluations.
+      </p>
+      <br>
+      <video id="summary-video" class="shadow" controls preload="metadata" width="100%" poster="static/thumbnails/talk_video.jpg">
+        <source src="static/videos/talk_video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
 
-  <!-- ===== SUMMARY VIDEO ===== -->
-  <section id="summary" class="section">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Summary Video</h2>
-      <div class="columns is-centered">
-        <div class="column is-8 has-text-centered">
-          <video id="summary-video" class="shadow" controls preload="metadata" width="100%" poster="static/thumbnails/summary.jpg">
-            <source src="static/videos/overview.mov" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
+ 
   <!-- ===== REAL ROBOT EXPERIMENTS ===== -->
-  <section id="real-robot" class="section section-gray">
-    <div class="container">
+  <section id="real-robot" class="section">
+    <div class="container is-max-desktop content-container">
       <h2 class="title is-3 has-text-centered">Real Robot Experiments</h2>
+      <p class="has-text-justified">
+        We evaluate our method on three challenging real-world tasks: <em>Put Mouse in Drawer</em>, <em>Fold Towel</em>, and <em>Put Tomato in Plate</em>. Six environment factors are considered: camera pose, lighting, distractor objects, table texture, object pose, and robot initial pose.
+      </p>
+      <br>
 
       <!-- ===== Task 1 ===== -->
       <div class="task-block" id="task-1">
-        <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
+        <h3 class="title is-4 task-title">Task 1 – Put Mouse in Drawer</h3>
         <div class="task-carousel">
           <!-- Eight videos with poster extracted via Python script -->
           <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/drawer1.jpg" preload="metadata"><source src="static/videos/drawer1.mp4" type="video/mp4" /></video></div>
@@ -118,39 +162,85 @@
         </div>
       </div>
 
-      <!-- ===== Task 2 (stub) ===== -->
+      <!-- ===== Task 2 ===== -->
       <div class="task-block" id="task-2">
-        <h3 class="title is-4 task-title">Task 2 – Your Task Name</h3>
+        <h3 class="title is-4 task-title">Task 2 – Fold Towel</h3>
         <div class="task-carousel">
-          <!-- Duplicate & change filenames -->
-          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/task2_vid1.jpg" preload="metadata"><source src="static/videos/task2_vid1.mp4" type="video/mp4" /></video></div>
-          <!-- repeat 7 more times -->
+          <!-- Eight videos -->
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel1.jpg" preload="metadata"><source src="static/videos/towel1.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel2.jpg" preload="metadata"><source src="static/videos/towel2.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel3.jpg" preload="metadata"><source src="static/videos/towel3.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel4.jpg" preload="metadata"><source src="static/videos/towel4.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel5.jpg" preload="metadata"><source src="static/videos/towel5.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel6.jpg" preload="metadata"><source src="static/videos/towel6.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel7.jpg" preload="metadata"><source src="static/videos/towel7.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/towel8.jpg" preload="metadata"><source src="static/videos/towel8.mp4" type="video/mp4" /></video></div>
         </div>
       </div>
 
-      <!-- ===== Task 3 (stub) ===== -->
+      <!-- ===== Task 3 ===== -->
       <div class="task-block" id="task-3">
-        <h3 class="title is-4 task-title">Task 3 – Your Task Name</h3>
+        <h3 class="title is-4 task-title">Task 3 – Put Tomato in Plate</h3>
         <div class="task-carousel">
-          <!-- Duplicate & change filenames -->
-          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/task3_vid1.jpg" preload="metadata"><source src="static/videos/task3_vid1.mp4" type="video/mp4" /></video></div>
-          <!-- repeat 7 more times -->
+          <!-- Eight videos -->
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick1.jpg" preload="metadata"><source src="static/videos/pick1.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick2.jpg" preload="metadata"><source src="static/videos/pick2.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick3.jpg" preload="metadata"><source src="static/videos/pick3.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick4.jpg" preload="metadata"><source src="static/videos/pick4.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick5.jpg" preload="metadata"><source src="static/videos/pick5.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick6.jpg" preload="metadata"><source src="static/videos/pick6.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick7.jpg" preload="metadata"><source src="static/videos/pick7.mp4" type="video/mp4" /></video></div>
+          <div class="video-thumb"><video class="thumb-video" autoplay loop muted playsinline poster="static/thumbnails/pick8.jpg" preload="metadata"><source src="static/videos/pick8.mp4" type="video/mp4" /></video></div>
         </div>
+      </div>
+    </div>
+    <p class="has-text-justified content-container">
+      We test FSC in both <em>training-from-scratch</em> settings (using Diffusion&nbsp;Policy) and <em>fine-tuning</em> settings (using Pi0). FSC solves these tasks even under compounded environment-factor variations, outperforming baselines by up to&nbsp;26&nbsp;%.
+    </p>
+    <br>
+
+    <div class="row content-container">
+      <div class="col-md-12 text-center">
+          <ul class="list-inline">
+              <li>
+                  <img src="static/real_exp.png" class="real-exp-img" alt="Real experiment results" />
+              </li>
+          </ul>
       </div>
     </div>
   </section>
 
-  <!-- ===== METHOD ===== -->
-  <section id="method" class="section">
-    <div class="container content is-medium">
-      <h2 class="title is-3">Method</h2>
-      <p>Replace with your method description.</p>
+  <!-- ===== SIMULATION ROBOT EXPERIMENTS ===== -->
+  <section id="sim-robot" class="section">
+    <div class="container is-max-desktop content-container">
+      <h2 class="title is-3 has-text-centered">Simulation Experiments</h2>
+      <p>We evaluate our method on three simulation tasks: put tomato in plate, peg insertion and pull cube tool.
+        We consider eight environment factors: camera pose, lighting, distractor objects, table texture, background, object pose, robot initial pose, and table height.
+      </p>
+      <br>
+
+      <!-- ===== Tasks ===== -->
+      <div class="task-block" id="sim-task-video">
+        <h3 class="title is-4 task-title">Tasks</h3>
+        <video class="sim-video" autoplay loop muted playsinline poster="static/thumbnails/sim_video_3task.jpg" preload="metadata">
+          <source src="static/videos/sim_video_3task.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- ===== Factors ===== -->
+      <div class="task-block" id="sim-factors-video">
+        <h3 class="title is-4 task-title">Environment Factors</h3>
+        <video class="sim-video" autoplay loop muted playsinline poster="static/thumbnails/sim_video_grids.jpg" preload="metadata">
+          <source src="static/videos/sim_video_grids.mp4" type="video/mp4" />
+        </video>
+      </div>
+
     </div>
   </section>
 
   <!-- ===== BIBTEX ===== -->
   <section id="bibtex" class="section">
-    <div class="container content is-medium">
+    <div class="container content is-medium content-container">
       <h2 class="title is-3">BibTeX</h2>
       <pre>
 @inproceedings{shah2023vint,
@@ -169,7 +259,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(function(){
-      // Init carousels
+      // Init carousels (only those still using .task-carousel wrappers)
       $('.task-carousel').slick({
         slidesToShow:4,
         slidesToScroll:1,
