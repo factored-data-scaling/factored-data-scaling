@@ -18,7 +18,7 @@
 
   <style>
     /* --- GLOBAL --- */
-    body{background:#fff;font-family:"Noto Sans",sans-serif;}
+    body{background:#fff;font-family:"Noto Sans",sans-serif;font-size:18px; line-height:1.5;color:#333;}
     section{padding:2.5rem 0;}
 
     /* --- SECTION COLORS --- */
@@ -35,6 +35,8 @@
     #overview.section{padding-top:0.75rem;} /* tighter gap below hero */
     .publication-links{margin-top:1.5rem;margin-bottom:1.5rem;} /* gap between authors/icons & icons/logo */
     figure.lab-logo{margin-top:1.5rem;} /* gap between icons and Princeton logo */
+    /* #sim-robot.section{padding-bottom:0.1rem;} gap above simulation section */
+    #bibtex.section-{padding-top:0rem;} /* gap above BibTeX section */
 
     /* --- SLICK ARROWS --- */
     .slick-prev:before,.slick-next:before{color:#3273dc;font-size:32px;}
@@ -59,6 +61,23 @@
 
     /* --- REAL EXP IMG --- */
     .real-exp-img{width:100%;height:auto;max-width:100%;}
+    /* --- LINK COLOR (lighter blue, closer to default hyperlinks) --- */
+
+    .publication-authors a:hover{
+      text-decoration:underline;
+    }
+
+    /* --- HERO ↔ OVERVIEW GAP (shrink) --- */
+    .hero{padding-bottom:0rem;}         /* was 0.5rem */
+    #overview.section{padding-top:0rem;}/* was 0.75rem */
+
+    /* --- REAL-ROBOT ↔ SIMULATION GAP (shrink) --- */
+    #real-robot.section{padding-top:2.5rem;} /* default Bulma ≈2.5rem */
+    #real-robot.section{padding-bottom:2.5rem;} /* default Bulma ≈2.5rem */
+    #sim-robot.section {padding-top:2.5rem;}    /* default Bulma ≈2.5rem */
+
+    /* --- SIMULATION ↔ BIBTEX GAP (shrink) --- */
+    #BibTeX.section{padding-top:0.1rem;}        /* tighten above BibTeX */
   </style>
 </head>
 <body>
@@ -94,10 +113,13 @@
           <a href="static/paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
             <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
           </a>
-          <a href="https://github.com/user/repo" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
-            <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+          <a href="https://arxiv.org/abs/2505.07728" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
           </a>
-          <a href="https://youtu.be/your_video" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+          <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="fab fa-github"></i></span><span>Code (Coming Soon!)</span>
+          </a>
+          <a href="https://youtu.be/unTqsgAVE1o" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
             <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
           </a>
         </div>
@@ -142,7 +164,7 @@
     <div class="container is-max-desktop content-container">
       <h2 class="title is-3 has-text-centered">Real Robot Experiments</h2>
       <p class="has-text-justified">
-        We evaluate our method on three challenging real-world tasks: <em>Put Mouse in Drawer</em>, <em>Fold Towel</em>, and <em>Put Tomato in Plate</em>. Six environment factors are considered: camera pose, lighting, distractor objects, table texture, object pose, and robot initial pose.
+        We evaluate our method on three challenging real-world tasks: Put Mouse in Drawer, Fold Towel, and Put Tomato in Plate. Six environment factors are considered: camera pose, lighting, distractor objects, table texture, object pose, and robot initial pose.
       </p>
       <br>
 
@@ -195,7 +217,8 @@
       </div>
     </div>
     <p class="has-text-justified content-container">
-      We test FSC in both <em>training-from-scratch</em> settings (using Diffusion&nbsp;Policy) and <em>fine-tuning</em> settings (using Pi0). FSC solves these tasks even under compounded environment-factor variations, outperforming baselines by up to&nbsp;26&nbsp;%.
+      We test FSC in both training-from-scratch settings (using Diffusion&nbsp;Policy) and fine-tuning settings (using $\pi_0$). FSC solves these tasks even under compounded environment-factor variations, outperforming baselines by up to&nbsp;26&nbsp;%. FSC-Proxy achieves nearly the
+      same high success rate as FSC while eliminating the need for any on-hardware policy execution.
     </p>
     <br>
 
@@ -214,45 +237,56 @@
   <section id="sim-robot" class="section">
     <div class="container is-max-desktop content-container">
       <h2 class="title is-3 has-text-centered">Simulation Experiments</h2>
-      <p>We evaluate our method on three simulation tasks: put tomato in plate, peg insertion and pull cube tool.
-        We consider eight environment factors: camera pose, lighting, distractor objects, table texture, background, object pose, robot initial pose, and table height.
-      </p>
+      <!-- <p>We evaluate our method on three simulation tasks: Put Tomato in Plate, Peg Insertion and Pull Cube Tool.
+      </p> -->
       <br>
 
       <!-- ===== Tasks ===== -->
       <div class="task-block" id="sim-task-video">
-        <h3 class="title is-4 task-title">Tasks</h3>
-        <video class="sim-video" autoplay loop muted playsinline poster="static/thumbnails/sim_video_3task.jpg" preload="metadata">
-          <source src="static/videos/sim_video_3task.mp4" type="video/mp4" />
+        <!-- <h3 class="title is-4 task-title">Tasks</h3> -->
+        <!-- <p>
+        We evaluate our method on three simulation tasks: Put Tomato in Plate, Peg Insertion and Pull Cube Tool. 
+        </p> -->
+        <video class="sim-video" autoplay loop muted playsinline poster="static/thumbnails/sim_task.jpg" preload="metadata">
+          <source src="static/videos/sim_task.mp4" type="video/mp4" />
         </video>
       </div>
 
       <!-- ===== Factors ===== -->
       <div class="task-block" id="sim-factors-video">
         <h3 class="title is-4 task-title">Environment Factors</h3>
-        <video class="sim-video" autoplay loop muted playsinline poster="static/thumbnails/sim_video_grids.jpg" preload="metadata">
-          <source src="static/videos/sim_video_grids.mp4" type="video/mp4" />
+        <p>
+        We consider eight environment factors: camera pose, lighting, distractor objects, table texture, background, object pose, robot initial pose, and table height.
+        </p>
+        <br>
+        <video class="sim-video" autoplay loop muted playsinline poster="static/thumbnails/sim_factor.jpg" preload="metadata">
+          <source src="static/videos/sim_factor.mp4" type="video/mp4" />
         </video>
       </div>
 
     </div>
   </section>
 
-  <!-- ===== BIBTEX ===== -->
-  <section id="bibtex" class="section">
-    <div class="container content is-medium content-container">
-      <h2 class="title is-3">BibTeX</h2>
-      <pre>
-@inproceedings{shah2023vint,
-  title     = {ViNT: A Foundation Model for Visual Navigation},
-  author    = {Shah, Dhruv and Sridhar, Ajay and Dashora, Nitish and Stachowicz, Kyle and Black, Kevin and Hirose, Noriaki and Levine, Sergey},
-  booktitle = {Conference on Robot Learning},
-  year      = {2023},
-  url       = {https://arxiv.org/abs/2306.14846}
-}
-      </pre>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{zha2025guidingdatacollectionfactored,
+        title={Guiding Data Collection via Factored Scaling Curves}, 
+        author={Lihan Zha and Apurva Badithela and Michael Zhang and Justin Lidard and Jeremy Bao and Emily Zhou and David Snyder and Allen Z. Ren and Dhruv Shah and Anirudha Majumdar},
+        year={2025},
+        eprint={2505.07728},
+        archivePrefix={arXiv},
+        primaryClass={cs.RO},
+        url={https://arxiv.org/abs/2505.07728}, 
+  }</code></pre>
     </div>
   </section>
+  <br>
+  <center class="is-size-10">
+    The website design was adapted from <a href="https://nerfies.github.io" class="external-link"><span
+        class="dnerf">Nerfies</span></a>.
+  </center>
+  <br>
 
   <!-- ===== SCRIPTS ===== -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
