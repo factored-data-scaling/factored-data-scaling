@@ -148,7 +148,7 @@
     <div class="container is-max-desktop content-container">
       <h2 class="title is-3 has-text-centered">Abstract</h2>
       <p>
-        Generalist imitation-learning policies trained on large datasets show great promise for diverse manipulation tasks. However, achieving robust generalization requires data gathered under numerous environmental-factor variations (e.g., camera pose, table height, distractors) &mdash; an exhaustive dataset is prohibitively expensive. We introduce a principled method for deciding <em>what</em> data to collect and <em>how much</em> to collect for each factor by constructing <em>factored scaling curves</em> (FSC), which quantify how policy performance changes as data scales along individual or paired factors. These curves enable targeted data acquisition for the most influential factor combinations within a given budget. Through extensive simulated and real-world experiments &mdash; covering both training-from-scratch and fine-tuning scenarios &mdash; we show that FSC boosts success rates on real-world tasks in new environments by up to&nbsp;26&nbsp;% compared with existing data-collection strategies. Finally, we demonstrate that FSC can efficiently guide data collection using an <em>offline metric</em>, eliminating the need for costly large-scale real-world evaluations.
+        Generalist imitation-learning policies trained on large datasets show great promise for diverse manipulation tasks. However, achieving robust generalization requires data gathered under numerous environmental-factor variations (e.g., camera pose, table height, distractors) &mdash; an exhaustive dataset is prohibitively expensive. We introduce a principled method for deciding <em>what</em> data to collect and <em>how much</em> to collect for each factor by constructing <em>factored scaling curves</em> (FSC), which quantify how policy performance changes as data scales along individual or paired factors. These curves enable targeted data acquisition for the most influential factor combinations within a given budget. Through extensive simulated and real-world experiments &mdash; covering both training-from-scratch and fine-tuning scenarios &mdash; we show that FSC boosts success rates on real-world tasks in new environments by up to&nbsp;26% compared with existing data-collection strategies. Finally, we demonstrate that FSC can efficiently guide data collection using an <em>offline metric</em>, eliminating the need for costly large-scale real-world evaluations.
       </p>
       <br>
       <video id="summary-video" class="shadow" controls preload="metadata" width="100%" poster="static/thumbnails/talk_video.jpg">
@@ -217,7 +217,7 @@
       </div>
     </div>
     <p class="has-text-justified content-container">
-      We test FSC in both training-from-scratch settings (using Diffusion&nbsp;Policy) and fine-tuning settings (using $\pi_0$). FSC solves these tasks even under compounded environment-factor variations, outperforming baselines by up to&nbsp;26&nbsp;%. FSC-Proxy achieves nearly the
+      We test FSC in both training-from-scratch settings (using Diffusion&nbsp;Policy) and fine-tuning settings (using &pi;<sub>0</sub>). FSC solves these tasks even under compounded environment-factor variations, outperforming baselines by up to&nbsp;26%. FSC-Proxy achieves nearly the
       same high success rate as FSC while eliminating the need for any on-hardware policy execution.
     </p>
     <br>
